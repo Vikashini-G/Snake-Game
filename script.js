@@ -82,6 +82,7 @@ function move(){
 
     if (head.x === foodPos.x && head.y === foodPos.y){
         let audio = new Audio('food-eat.wav');
+        audio.volume = 0.1;
         audio.play();
         foodPos = generateFoodPosition();
         increaseSpeed();
