@@ -3,6 +3,8 @@ const instructionText = document.getElementById("instructions");
 const logo = document.getElementById("logo");
 const score = document.getElementById("score");
 const highScoreText = document.getElementById("highscore");
+const selfCollision = document.getElementById('selfCollision');
+const wallCollision = document.getElementById('wallCollision');
 const gridSize = 20;
 
 let snake = [{x:10, y:10}];
@@ -161,17 +163,27 @@ function increaseSpeed(){
       }
 }
 
+function message(element){
+    setTimeout(function() {
+        element.style.display = 'block';
+        setTimeout(function() {
+            element.style.display = 'none';
+        }, 3000); // Hide the message after 3 seconds
+      }, 50);
+}
 function checkCollision(){
     const head = snake[0];
 
     //in event of collision with game wall
     if (head.x < 1 || head.x > gridSize || head.y < 1 || head.y > gridSize){
+        message(wallCollision);
         resetGame();
     }
 
     //in event of collision with self
     for (let i = 1; i < snake.length; i++){ //running the 'if' for every part of the snake
         if (head.x === snake[i].x && head.y === snake[i].y){
+            message(selfCollision);
             resetGame();
         }
     }
