@@ -3,10 +3,17 @@ body{
     font-family: 'VT323', monospace;
     background-color: #414141;
 }
+#mylogo{
+    height: 5%;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    cursor: pointer;
+}
 .main-content{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     height: 100vh; 
 }
 #game-board{
@@ -68,13 +75,14 @@ body{
 }
 #selfCollision, #wallCollision{
     display: none;
-    position: absolute;
+    z-index: 1;
+    position: fixed;
+    top: 30px;
     text-align: center;
     left: 0;
     right: 0;
-    width: fit-content;
-    top: 30px;
     font-size: 25px;
+    width: fit-content;
     background-color: #e09dcf;
     padding: 11px 50px 10px 50px;
     margin: auto;

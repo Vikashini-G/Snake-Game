@@ -98,7 +98,7 @@ function move(){
         snake.pop();
     }
 }
-
+console.log("hello");
 function startGame(){
     gameStarted = true; //keeping track of the game
     instructionText.style.display = 'none';
@@ -148,7 +148,7 @@ function handleKeyPress(event){
     }
 }
 
-document.addEventListener('keydown', handleKeyPress)
+document.addEventListener('keydown', handleKeyPress);
 
 function increaseSpeed(){
     // console.log(gameSpeedDelay);
@@ -171,6 +171,7 @@ function message(element){
         }, 3000); // Hide the message after 3 seconds
       }, 50);
 }
+
 function checkCollision(){
     const head = snake[0];
 
